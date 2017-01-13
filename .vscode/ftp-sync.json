@@ -1,0 +1,19 @@
+{
+    "remotePath": "./",
+    "host": "angsila.cs.buu.ac.th",
+    "username": "58160625",
+    "password": "1200100647983",
+    "port": 22,
+    "secure": false,
+    "protocol": "sftp",
+    "uploadOnSave": true,
+    "passive": false,
+    "debug": false,
+    "privateKeyPath": null,
+    "passphrase": null,
+    "ignore": [
+        "\\.vscode",
+        "\\.git",
+        "\\.DS_Store"
+    ]
+}
