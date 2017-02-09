@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Form</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {height: 1500px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: whitesmoke;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: black;
+      padding: 20px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;} 
+    }
+  </style>
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav">
+      <h4>Love You Blog</h4>
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a href="http://angsila.cs.buu.ac.th/~58160625/887371/lab03/lab03.html">Home</a></li>
+        <li><a href="http://angsila.cs.buu.ac.th/~58160625/887371/lab03/Grid.html">Grid</a></li>
+        <li><a href="http://angsila.cs.buu.ac.th/~58160625/887371/lab03/Form.html">Form</a></li>
+        <li><a href="https://www.facebook.com/loveberry.54390">MyFacebook</a></li>
+      </ul><br>
+      <div class="input-group">
+        <span class="input-group-btn"> 
+        </span>
+      </div>
+    </div>
+
+    <div class="col-sm-9">
+      <h4><small>RECENT POSTS</small></h4>
+      <hr>
+      
+      <h2>Form</h2>
+      <h5><span class="glyphicon glyphicon-time"></span> Post by Love you, Feb 7, 2017.</h5>
+      <h5><span class="label label-danger">Brootstrap</span> <span class="label label-primary">Form</span></h5><br>
+      <br>
+      <p><b><u>Bootstrap Form</u></b></p>
+      <br>
+      <h4><b>Ex. Vertical Form(basic)</h4>
+        <div class="well well-sm">
+        <div class="w3-code notranslate htmlHigh">
+        <span style="color:brown"><span style="color:mediumblue">&lt;</span>form</span></span><span style="color:mediumblue">&gt;</span></span>
+        <br>&nbsp; 
+        <span style="color:brown">
+        <span style="color:mediumblue">&lt;</span>div<span style="color:red"> class<span style="color:mediumblue">="form-group"</span></span><span style="color:mediumblue">&gt;</span></span>
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;  
+        <span style="color:brown"><span style="color:mediumblue">&lt;</span>label<span style="color:red"> for<span style="color:mediumblue">="email"<span style="color:mediumblue">&gt;</span></span></span></span>Email address:<span style="color:mediumblue">&lt;</span><span style="color: brown">/label</span><span style="color: mediumblue">&gt;</span>
+        <br>&nbsp;&nbsp;&nbsp;&nbsp; 
+        <span style="color:brown">
+        <span style="color:mediumblue">&lt;</span>input<span style="color:red"> type<span style="color:mediumblue">="email"</span></span><span style="color: red"> &nbsp;class</span><span style="color:mediumblue">="form-control"</span><span style="color: red"> id</span>
+        <span style="color:mediumblue">="email"<span style="color:mediumblue">&gt;</span></span>
+        <br>&nbsp; 
+        <span style="color:brown"><span style="color:mediumblue">&lt;</span>/div<span style="color:mediumblue">&gt;</span></span>
+        <br>&nbsp; 
+        <span style="color:brown">
+        <span style="color:mediumblue">&lt;</span>div<span style="color:red"> class<span style="color:mediumblue">="form-group"</span></span><span style="color:mediumblue">&gt;</span></span>
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;  
+        <span style="color:brown"><span style="color:mediumblue">&lt;</span>label<span style="color:red"> for<span style="color:mediumblue">="pwd"<span style="color:mediumblue">&gt;</span></span></span></span>Password:<span style="color:mediumblue">&lt;</span><span style="color: brown">/label</span><span style="color: mediumblue">&gt;</span>
+        <br>&nbsp;&nbsp;&nbsp;&nbsp; 
+        <span style="color:brown">
+        <span style="color:mediumblue">&lt;</span>input<span style="color:red"> type<span style="color:mediumblue">="password"</span></span><span style="color: red"> &nbsp;class</span><span style="color:mediumblue">="form-control"</span><span style="color: red"> id</span>
+        <span style="color:mediumblue">="pwd"<span style="color:mediumblue">&gt;</span></span>
+        <br>&nbsp; 
+        <span style="color:brown"><span style="color:mediumblue">&lt;</span>/div<span style="color:mediumblue">&gt;</span></span>
+        <br>&nbsp;
+        <span style="color:brown">
+        <span style="color:mediumblue">&lt;</span>div<span style="color:red"> class<span style="color:mediumblue">="checkbox"</span></span>
+        <span style="color:mediumblue">&gt;</span></span>
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: mediumblue">&lt;</span><span style="color: red">label</span><span style="color: mediumblue">&gt;</span><span style="color:brown"><span style="color:mediumblue">&lt;</span>input<span style="color:red"> type<span style="color:mediumblue">="checkbox"
+        <span style="color:mediumblue">&gt;</span></span></span></span></span></span>Remember Me<span style="color:mediumblue">&lt;</span><span style="color: brown">/label</span><span style="color: mediumblue">&gt;</span>
+        <br>&nbsp;
+        <span style="color:brown"><span style="color:mediumblue">&lt;</span>/div<span style="color:mediumblue">&gt;</span></span>
+        <br>&nbsp; 
+        <span style="color: mediumblue">&lt;</span><span style="color: brown">button</span><span style="color: red"> type</span><span style="color: mediumblue">="submit"</span><span style="color: red"> class</span><span style="color: mediumblue">="btn btn-default"</span>Submit
+        <span style="color: mediumblue">&lt;<span style="color: brown">/button</span><span style="color:mediumblue">&gt;</span>
+        <br>
+        <span style="color:brown"><span style="color:mediumblue">&lt;</span>/form</span></span><span style="color:mediumblue">&gt;</span></span>
+        <br>
+        </div></div>
+        
+        <div class="container">
+  <h4><b>Vertical Form(basic)</b></h4>
+  <form>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox"> Remember me</label>
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+</div>
+<br>
+<br>
+      <hr>
+      <h4>Leave a Comment:</h4>
+      <form role="form">
+        <div class="form-group">
+          <textarea class="form-control" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+      <br><br>
+      
+      <p><span class="badge">2</span> Comments:</p><br>
+      
+      <div class="row">
+        <div class="col-sm-2 text-center">
+          <img src="tae.jpg" class="img-circle" height="65" width="65" alt="Avatar">
+        </div>
+        <div class="col-sm-10">
+          <h4>Taenoob <small>feb 9, 2017</small></h4>
+          <p>This Bootstrap Form.</p>
+          <br>
+        </div>
+        <div class="col-sm-2 text-center">
+          <img src="bro.jpg" class="img-circle" height="65" width="65" alt="Avatar">
+        </div>
+        <div class="col-sm-10">
+          <h4>P.Poom  <small>feb 9, 2017</small></h4>
+          <p>I need to know basic Bootstrap form</p>
+          <br>
+          <p><span class="badge">1</span> Comment:</p><br>
+          <div class="row">
+            <div class="col-sm-2 text-center">
+              <img src="jean.jpg" class="img-circle" height="65" width="65" alt="Avatar">
+            </div>
+            <div class="col-xs-10">
+              <h4>Jeans <small>feb 9, 2017</small></h4>
+              <p>same!!</p>
+              <br>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="container-fluid">  
+  <p><b><center>Pongsaton Rattana 58160625</center></b></p>
+</footer>
+
+</body>
+</html>

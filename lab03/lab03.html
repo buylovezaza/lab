@@ -9,19 +9,19 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
     /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
-    .row.content {height: auto}
+    .row.content {height: 1500px}
     
     /* Set gray background color and 100% height */
     .sidenav {
-      background-color: #f1f1f1;
+      background-color: whitesmoke;
       height: 100%;
     }
     
     /* Set black background color, white text and some padding */
     footer {
       background-color: #555;
-      color: white;
-      padding: 15px;
+      color: black;
+      padding: 20px;
     }
     
     /* On small screens, set height to 'auto' for sidenav and grid */
@@ -42,16 +42,12 @@
       <h4>Love You Blog</h4>
       <ul class="nav nav-pills nav-stacked">
         <li class="active"><a href="http://angsila.cs.buu.ac.th/~58160625/887371/lab03/lab03.html">Home</a></li>
-        <li><a href="">Grid</a></li>
-        <li><a href="">Form</a></li>
+        <li><a href="http://angsila.cs.buu.ac.th/~58160625/887371/lab03/Grid.html">Grid</a></li>
+        <li><a href="http://angsila.cs.buu.ac.th/~58160625/887371/lab03/Form.html">Form</a></li>
         <li><a href="https://www.facebook.com/loveberry.54390">MyFacebook</a></li>
       </ul><br>
       <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search Blog..">
-        <span class="input-group-btn">
-          <button class="btn btn-default" type="button">
-            <span class="glyphicon glyphicon-search"></span>
-          </button>
+        <span class="input-group-btn"> 
         </span>
       </div>
     </div>
@@ -61,14 +57,59 @@
       <hr>
       <h2>This My Home page</h2>
       <h5><span class="glyphicon glyphicon-time"></span> Post by Love you, Feb 7, 2017.</h5>
-      <h5><span class="label label-danger">Grid</span> <span class="label label-primary">Brootstrap</span></h5><br>
+      <h5><span class="label label-danger">Brootstrap</span> <span class="label label-primary">Grid</span> <span class="label label-primary">Form</span></h5><br>
       <img src="bootstrapimg.png">
       <br>
-      <p><b>เว็บนี้จัดทำขึ้นเพื่อศึกษาBlog เกี่ยวกับการใช้งานbootstrap เรื่อง gridและform</b></p>
-      <br><br>
+      <br>
+      <p><b>My blog use learn Bootstrap Section Grid and Form</b></p>
+      <br>
+      <hr>
 
-<footer class="container-fluid">
-  <p>Pongsaton Rattana 58160625</p>
+      <h4>Leave a Comment:</h4>
+      <form role="form">
+        <div class="form-group">
+          <textarea class="form-control" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+      <br><br>
+      
+      <p><span class="badge">2</span> Comments:</p><br>
+      
+      <div class="row">
+        <div class="col-sm-2 text-center">
+          <img src="tae.jpg" class="img-circle" height="65" width="65" alt="Avatar">
+        </div>
+        <div class="col-sm-10">
+          <h4>Taenoob <small>feb 9, 2017</small></h4>
+          <p>me so noob ty.</p>
+          <br>
+        </div>
+        <div class="col-sm-2 text-center">
+          <img src="bro.jpg" class="img-circle" height="65" width="65" alt="Avatar">
+        </div>
+        <div class="col-sm-10">
+          <h4>P.Poom  <small>feb 9, 2017</small></h4>
+          <p>Wow tae so noob</p>
+          <br>
+          <p><span class="badge">1</span> Comment:</p><br>
+          <div class="row">
+            <div class="col-sm-2 text-center">
+              <img src="jean.jpg" class="img-circle" height="65" width="65" alt="Avatar">
+            </div>
+            <div class="col-xs-10">
+              <h4>Jeans <small>feb 9, 2017</small></h4>
+              <p>I think too bro!!</p>
+              <br>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="container-fluid">  
+  <p><b><center>Pongsaton Rattana 58160625</center></b></p>
 </footer>
 
 </body>
