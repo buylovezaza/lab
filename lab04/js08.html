@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Image rollover</title>
+    <script language=javascript>
+    function highlightdocs(){
+        if(document.images){document.images["docs"].src=docsOn.sec;}       
+    }
+    if(document.images){
+        docsOn = new Image();
+        docsOn.src = "love you.jpg"
+        docsOff = new Image();
+        docsOff.src="love you2.jpg"
+    }
+    </script>
+    </head>
+    <body>
+        <p><a href="http://www.google.com" onmouseover="highlightdocs()" onmouseout="unhighlightdocs()" >
+        <img src="love you.jpg" name=docs height=25 width=25 border=0 >
+        </a>
+        </p>
+    </body>
+</html>
