@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <script>
+        function loadXMLDoc(){
+            var xmlhttp,xmlhttpa,xmlhttpb;
+            if(window.XMLHttpRequest){
+                xmlhttp=new XMLHttpRequest();
+                xmlhttpa=new XMLHttpRequest();
+                xmlhttpb=new XMLHttpRequest();
+            }else{
+                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                xmlhttpa=new ActiveXObject("Microsoft.XMLHTTP");
+                xmlhttpb=new ActiveXObject("Microsoft.XMLHTTP");
+            }
+
+            xmlhttp.onreadystatechange= function() {
+                    document.getElementById("myDiv").innerHTML = xmlhttp.responseText;
+                }
+            xmlhttpa.onreadystatechange = function(){
+                document.getElementById("myDiva").innerHTML = xmlhttpa.responseText;
+            }
+            xmlhttpb.onreadystatechange = function(){
+                document.getElementById("myDivb").innerHTML = xmlhttpb.responseText;
+            }
+            xmlhttp.open("GET","kamkom.php",true);
+            xmlhttpa.open("GET","http://angsila.cs.buu.ac.th/~58160628/887371/lab05/kamkom.php",true);
+            xmlhttpb.open("GET","http://angsila.cs.buu.ac.th/~58160634/887371/lab05/kamkom.php",true);
+            xmlhttp.send();
+            xmlhttpa.send();
+            xmlhttpb.send();
+        }
+        </script>
+    </head>
+    <body>
+
+        <div id="myDiv">
+            <h2>
+                Let AJAX change this text
+            </h2>
+        </div>
+        <div id="myDiva"><h3>This kamkom word</h3></div>
+        <div id=myDivb><h3>kamkom dondon</h3></div>
+        <button type="button" onclick="loadXMLDoc()">
+            Change Content
+        </button>
+    </body>
+</html>
