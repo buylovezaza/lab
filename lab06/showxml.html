@@ -1,0 +1,38 @@
+<html>
+<head>
+</head>
+<body>
+<button type="button" onclick="loadDoc()">Get xml</button>
+<br><br>
+<div id="demo"></div>
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      myFunction(this);
+    }
+  };
+  xhttp.open("GET", "http://angsila.cs.buu.ac.th/~wittawas/592/887371/labs/get_xml.php", true);
+  xhttp.send();
+}
+function myFunction(xml) {
+  var i;
+  var xmlDoc = xml.responseXML;
+  var table="";
+  var x = xmlDoc.getElementsByTagName("book");
+  for (i = 0; i <x.length; i++) { 
+    table +=
+   "<h3>"+ x[i].getElementsByTagName("title")[0].childNodes[0].nodeValue +"</h3>"+
+    x[i].getElementsByTagName("publisher")[0].childNodes[0].nodeValue +
+    x[i].getElementsByTagName("author")[0].childNodes[0].nodeValue +"<br>" +"<img src=" +
+    x[i].getElementsByTagName("cover")[0].getAttribute("src")+" height='256'>"+"<br>" +
+    x[i].getElementsByTagName("blurb")[0].childNodes[0].nodeValue +"<br>"
+     ;
+  }
+  document.getElementById("demo").innerHTML = table;
+  
+}
+</script>
+</body>
+</html>
