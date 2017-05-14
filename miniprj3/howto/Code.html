@@ -9,7 +9,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
     /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
-    .row.content {height: 700px}
+    .row.content {height: 15000px}
     
     /* Set gray background color and 100% height */
     .sidenav {
@@ -61,7 +61,7 @@
       <p>และจะขออธิบายแค่ส่วนที่สำคัญๆสำหรับการเขียนโค้ดนะครับ </p>
       <p>&nbsp;&nbsp;&nbsp; ในส่วนของโค้ดหน้า index จะมีการใช้ code คล้ายๆกับหน้า SearchComName และ SearchComYear นะครับคือจะมีบริเวณที่ใช้สำหรับการแสดงผลที่เหมือนกัน</p>
       <p>แต่จะต่างกันตรงที่ index.php ไม่สามารถค้นหาข้อมูลได้ จะขออธิบายรวบไปเลยนะครับ</p>
-      <h3>index.php & SearchComName.php & SearchComYear.php</h3>
+      <h3>index.php &amp; SearchComName.php &amp; SearchComYear.php</h3>
       <p>เริ่มต้นด้วยการกำหนดชื่อ ng-app และ ng-control โดย ng-app เป็นการ setup angular project และ ng-control เป็นส่วนของตัวควบคุม</p>
       <p>ซึ่งผู้จัดทำกำหนดชื่อของ ng-app และ ng-control ตามรูปด้านล่าง</p>
       <br>
@@ -151,7 +151,50 @@
       <h4>getDock.php</h4>
       <p>หน้านี้มีหน้าที่เก็บ DID แล้วส่งต่อไปให้กับไฟล์ที่ทำการร้องขอ เริ่มต้นที่สร้างส่วนเชื่อมต่อกับฐานข้อมูลเหมือนเช่นเคย</p>
       <img src="18.png" width="900" height="200">
-
+      <p>ต่อมาจากส่วนเชื่อมต่อฐานข้อมูล ก็มาถึงส่วนข้อมูล</p>
+      <img src="19.png" width="900" height="500">
+      <p>$sql จะเห็นว่ามีการทำ NATURAL JOIN DocList และ ComName ที่ฐานข้อมูล จาก DID มีการ encode json แล้วส่งกลับไปเป็น str หรือข้อมูลรูปแบบ string</p>
+      <br><br>
+      <h4>delDoc.php</h4>
+      <p>ไฟล์ตัวนี้ใช้สำหรับการลบข้อมูลจากฐานข้อมูล DocCom และ DocList ที่ DID เริ่มต้นให้ทำการเชื่อมฐานข้อมูล </p>
+      <img src="20.png" width="900" height="300">
+      <p>$DID – ทำการรับค่า DID</p>
+      <p>$sql – ทำการสั่งลบข้อมูลภายใน</p>
+      <br><br>
+      <h4>getall.php</h4>
+      <p>เป็นไฟล์ที่ทำการเก็บข้อมูลจาก DocList แล้วทำการ encode เป็น json เริ่มจากเชื่อต่อฐานข้อมูล</p>
+      <img src="21.png" width="900" height="200">
+      <br><br>
+      <img src="22.png" width="900" height="500">
+      <p>$sql – ทำการเก็บข้อมูล DID จากฐานข้อมูล DocList เพื่อทำการ encode เป็น json</p>
+      <br><br>
+      <h4>updateDoc.php</h4>
+      <p>เป็นไฟล์ที่ใช้งานร่วมกับไฟล์ชื่อ update.php เพื่อแก้ไขไฟล์เอกสาร เริ่มจากเชื่อมต่อฐานข้อมูลเหมือนเช่นเคย แล้วทำการ decode ตามรูปด่นล่าง</p>
+      <img src="23.png" width="900" height="450">
+      <p>$data – จะทำการ decode ตัวแปรต่างๆที่ระบุเอาไว้</p>
+      <img src="24.png" width="900" height="450">
+      <p>$sq; - ทำการอัพเดท ค่าที่อยู่หลัง SET จาก DID ที่ตรงกัน</p>
+      <img src="25.png" width="900" height="350">
+      <p>$sql – ตรงส่วนนี้จะทำการลบข้อมูลชุดเก่าออกไปที่มี DID ตรงกัน</p>
+      <br><br>
+      <h4>update.php</h4>
+      <p>เป็นหน้าที่ใช้สำหรับการแก้ไข ทำงานร่วมกับไฟล์ updateDoc.php เริ่มต้นทำการเชื่อมต่อฐานข้อมูล และทำการรับค่า DID เข้ามาด้วย</p>
+      <img src="26.png" width="900" height="300">
+      <p>ภาพด้านล่างเป็นภาพที่แสดงข้อมูลต่างๆที่มาจากหน้า document.php</p>
+      <img src="27.png" width="900" height="600">
+      <p>วิธีการดึงข้อมูลจึงเป็นแบบเดียวกันกับ document.php แต่ในหน้าของ update.php สามารถแก้ไขข้อมูลต่างๆได้ยกเว้นวันที่ และเลขที่คำสั่ง ต่อมาเป็นการสร้างปุ่มสำหรับทำการ submit เขียนตามภาพเนล่าง</p>
+      <img src="28.png" width="900" height="50">
+      <p>มาที่ส่วนของ script</p>
+      <img src="29.png" width="900" height="500">
+      <p>ส่วนนี้จะเป็นการเชื่อมกับ module updateDoc </p>
+      <p>$scope.DID – มีค่าเท่ากับ DID</p>
+      <p>$sql – เลือกข้อมูลจากฐานข้อมูล DocCom ที่ทำการ NATURAL JOIN กับ DocList และ DocName ที่ DID</p>
+      <img src="30.png" width="900" height="550">
+      <p>$scope.addNewCommittee = function() – เป็นคำสั่งสำหรับการเพิ่มชื่อกรรมการ</p>
+      <p>$scope.updateData = function() – เป็นคำสั่งที่มีการเช็ค DStatus จาก DSDate และ DEDate</p>
+      <p>มี function สำหรับการ post ค่าไปยังฐานข้อมูล</p>
+      <img src="31.png" width="900" height="400">
+      <p>ในส่วนนี้มีการเชื่อมกับ module showDoc เพื่อทำการรับ DID จาก getDoc.php</p>
       <hr>
     </div>
   </div>
