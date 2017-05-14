@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {height: 1530px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: whitesmoke;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color:#005ce6;
+      color: black;
+      padding: 20px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;} 
+    }
+  </style>
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+      <h4>Miniprj3</h4>
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a href="http://angsila.cs.buu.ac.th/~58160625/887371/miniprj3/howto/">Home</a></li>
+        <li><a href="http://angsila.cs.buu.ac.th/~58160625/887371/miniprj3/howto/Database.html">Database</a></li>
+        <li><a href="http://angsila.cs.buu.ac.th/~58160625/887371/miniprj3/howto/Code.html">Code</a></li>
+      </ul><br>
+      <div class="input-group">
+        <span class="input-group-btn"> 
+        </span>
+      </div>
+    </div>
+
+    <div class="col-sm-10">
+      <h4><small>MINIPROJECT3 </small></h4>
+      <hr>
+      <h2>This my Database </h2>
+      <h5><span class="glyphicon glyphicon-time"></span> Post by 58160056 58160625 58160697, May 12, 2017.</h5>
+      <h5><span class="label label-danger">Miniprj3</span> <span class="label label-primary">Database</span> </h5><br>
+      <p>ทำการสร้างฐานข้อมูลขึ้นมาทั้งหมด 3 ฐานข้อมูล ได้แก่ ComName, DocList และ DocCom</p>
+      <img src="db1.png" width="1000" height="200">
+      <br>
+      <br>
+        <p>ComName เป็นฐานข้อมูลที่ใช้สำหรับจัดเก็บรายชื่อกรรมการ มี </p>
+        <p>- CID สำหรับเก็บเลขไอดีในรูปแบบของตัวเลข ชนิด int ขนาด 11 โดยให้มีการรันไอดีโดยอัตโนมัติ เป็น Primary key </p>
+        <p>- CName สำหรับเก็บรายชื่อกรรมการ ชนิด varchar ขนาด 50 โดยใช้ utf8_general_ci เพื่อให้สามารถแสดงชื่อแบบภาษาไทยได้</p>
+      <br>
+      <img src="db2.png" width="1000" height="300">
+      <br>
+      <br>
+      <p>DocList เป็นฐานข้อมูลสำหรับเก็บลสยละเอียดต่างๆของเอกสาร</p>
+      <p>- DID เก็บข้อมูลเลขไอดีในรูปแบบ int ขนาด 11 โดยให้มีการรันไอดีแบบอัตโนมัติ เป็น Primary key</p>
+      <p>- DCode เก็บรหัสของคำสั่งแบบ varchar ขนาด 50 โดยใช้ utf8_general_ci สาเหตุที่เลือกเก็บข้อมูลแบบ varchar เพราะว่ารหัสของคำสั่งอาจมีตัวหนังสือและตัวเลขได้</p>
+      <p>- DName เก็บชื่อคำสั่งแบบ varchar ขนาด 1000 โดยใช้รูปแบบ utf8_general_ci</p>
+      <p>- DSDate เก็บข้อมูลวันที่เริ่มต้นของคำสั่งในเอกสาร รูปแบบ date</p>
+      <p>- DEDate เก็บข้อมูลวันที่สิ้นสุดของคำสั่งในเอกสาร รูปแบบ date</p>
+      <p>- DStatus เก็บข้อมูลของสถานะของคำสั่ง ในรูปแบบ tinyint ขนาด 4 เพราะเก็บเป็นตัวเลข</p>
+      <p>- DLink เก็บลิงค์ที่ใช้สำหรับเชื่อมไปยังเอกสาร รูปแบบ varchar ขนาด 255 โดยใช้ utf8_general_ci</p>
+      <br>
+      <img src="db3.png" width="1000" height="200">
+      <br>
+      <br>
+      <p>DocCom เป็นฐานข้อมูลที่เก็บเฉพาะไอดีที่มาจากฐานข้อมูล ComName และ DocList</p>
+      <p>- DCID จัดเก็บเลขไอดีในรูปแบบ int ขนาด 11 โดยให้มีการรันไอดีแบบอัตโนมัติ เป็น Primary key</p>
+      <p>- DID ทำการเก็บเลขไอดีจาก DocList ชนิด int ขนาด 11</p>
+      <p>- CID ทำการเก็บเลขไอดีจาก DocList ชนิด int ขนาด 11</p>
+      <br>
+      <hr>
+    </div>
+  </div>
+</div>
+
+
+<footer class="container-fluid">  
+  <p><b><center>Creator 58160056 58160625 58160697</center></b></p>
+</footer>
+</body>
+</html>

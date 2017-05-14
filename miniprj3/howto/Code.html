@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {height: 700px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: whitesmoke;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color:#005ce6;
+      color: black;
+      padding: 20px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;} 
+    }
+  </style>
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+      <h4>Miniprj3</h4>
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a href="http://angsila.cs.buu.ac.th/~58160625/887371/miniprj3/howto/">Home</a></li>
+        <li><a href="http://angsila.cs.buu.ac.th/~58160625/887371/miniprj3/howto/Database.html">Database</a></li>
+        <li><a href="http://angsila.cs.buu.ac.th/~58160625/887371/miniprj3/howto/Code.html">Code</a></li>
+      </ul><br>
+      <div class="input-group">
+        <span class="input-group-btn"> 
+        </span>
+      </div>
+    </div>
+
+    <div class="col-sm-10">
+      <h4><small>MINIPROJECT3 </small></h4>
+      <hr>
+      <h2>This my Code</h2>
+      <h5><span class="glyphicon glyphicon-time"></span> Post by 58160056 58160625 58160697, May 12, 2017.</h5>
+      <h5><span class="label label-danger">Miniprj3</span> <span class="label label-primary">Code</span> </h5><br>
+      <p>&nbsp;&nbsp;&nbsp; ขออธิบายไว้ตรงนี้ก่อนนะครับ สำหรับ function() ต่างๆที่ได้อธิบายไปแล้วจะไม่มีการอธิบายซ้ำนะครับ ถ้าอยากรู้ให้ไล่อ่านกันเองนะครับ </p>
+      <p>และจะขออธิบายแค่ส่วนที่สำคัญๆสำหรับการเขียนโค้ดนะครับ </p>
+      <p>&nbsp;&nbsp;&nbsp; ในส่วนของโค้ดหน้า index จะมีการใช้ code คล้ายๆกับหน้า SearchComName และ SearchComYear นะครับคือจะมีบริเวณที่ใช้สำหรับการแสดงผลที่เหมือนกัน</p>
+      <p>แต่จะต่างกันตรงที่ index.php ไม่สามารถค้นหาข้อมูลได้ จะขออธิบายรวบไปเลยนะครับ</p>
+      <h3>index.php & SearchComName.php & SearchComYear.php</h3>
+      <p>เริ่มต้นด้วยการกำหนดชื่อ ng-app และ ng-control โดย ng-app เป็นการ setup angular project และ ng-control เป็นส่วนของตัวควบคุม</p>
+      <p>ซึ่งผู้จัดทำกำหนดชื่อของ ng-app และ ng-control ตามรูปด้านล่าง</p>
+      <br>
+      <img src="1.png" width="900" height="70">
+      <p>ทำการสร้างตารางสำหรับการแสดงผล ด้วยแบ่งโค้ดออกเป็นสองส่วน ดังนี้</p>
+      <h4>1.ส่วนหัวของตาราง</h4>
+      <img src="2.png" width="900" height="200">
+      <p>ส่วนนี้จะมีคำสั่ง ng-click ตามชื่อเลยครับเมื่อกดคลิกถึงจะทำงาน โดยใน ng-click จะมีคำว่า orderByMe(‘ตัวแปร’) คำสั่งตรงนี้จะทำการจัดเรียงบรรทัดใหม่เมื่อมีการกดคลิก</p>
+      <br><br>
+      <h4>2.ส่วนข้อมูลภายในตาราง</h4>
+      <img src="3.png" width="900" height="250">
+      <p>ในส่วนนี้จะเป็นส่วนที่ใช้สำหรับแสดงผล โดยจะทำการดึงข้อมูลมาสำหรับหรับการแสดงผลมาจากฐานข้อมูล ภายในจะมี function ng-if สำหรับ</p>
+      <p>เช็คค่ารับเข้ามาว่าตรงกับเงื่อไขที่กำหนดหรือไม่ เช่น กรณีที่รับค่าวันที่ของ SEDate หรือวันที่สิ้นสุดมีค่าเป็น 0000-00-00 จะแสดงผลเป็น – ถ้าไม่</p>
+      <p>เท่ากับ 0000-00-00 จะแสดงวันที่นั้นๆออกมา เป็นต้น</p>
+      <p>&lt;a href=&quot;document.php?DID={{x.DID}}&quot; class=&quot;glyphicon glyphicon-pencil&quot;	&gt;&lt;/a&gt;</p>
+      <p>บรรทัดตรงนี้เป็นการกดเพื่อย้ายไปยังหน้า document.php ซึ่งเป็นหน้าสำหรับดูข้อมูลเต็มๆของชุดคำสั่ง โดยจะไปดูข้อมูลชุดคำสั่งตาม DID ที่ตรงกับคำสั่งนั้นๆ</p>
+      <p>&lt;a ng-click=”removeItem(X.DID,$index+1)” class=”glyphicon glyphicon-trash”>&lt;/a&gt;</p>
+      <p>บรรทัดนี้จะเป็นฟังชันก์ที่ใช้สำหรับลบข้อมูลคำสั่งที่มีข้อมูลที่เกี่ยวข้องทั้งหมด</p>
+      <img src="4.png" width="900" height="400">
+      <p>มาต่อที่ส่วนของ script จะเห็นว่ามี function ต่างๆมากมาย มีการติดต่อกับ module DocumentList ที่ตัว controller ListController ด้วยฟังก์ชัน $scope และ $http</p>
+      <p>$http – ดึงข้อมูลมาจาก getall.php ผ่าน method GET</p>
+      <p>.then(function mySuccess(response){$scope.myData = response.data.items;}, function myError(response) { $scope.content = “Error: ” + response.statusText; - เป็น function สำหรับการเช็ค Error</p>
+      <p>$scope.select – ข้อมูลภายในนี้เป็นข้อมูลที่ใช้สำหรับเลือกค้นหาด้วยปี</p>
+      <p>$scope.timeStart = $scope.select[0] – เลือกปีเริ่มเป็นตำแหน่งแรก ถ้าหากไม่เลือกปีเริ่มต้น</p>
+      <p>$scope.timeEnd = $scope.select[$scope.select.length-1]; - เลือกปีสิ้นสุดเป็นตำแหน่งสุดท้าย ถ้าหากไม่ได้เลือกปีสิ้นสุด</p>
+      <p>$scope.time = function() – เป็น function ที่ช่วยสำหรับการค้นหา เรียกใช้งานร่วมกับ search.php</p>
+      <p>$scope.removeItem = function(DID, index) – เป็น function สำหรับการลบข้อมูลในตาราง เรียกใช้งานร่วมกับ delDoc.php</p>
+      <br><br>
+      <p>ในส่วนของปุ่มที่จะทำการลิงค์ไปยังหน้าเพิ่มคำสั่งเป็นดังนี้</p>
+      <img src="5.png" width="900" height="150">
+      <p>จะเห็นว่ามีการเชื่อมไปยัง insert.php โดยทำเป็นปุ่มกดดังรูปด้านบน</p>
+      <br><br>
+      <h4>Search</h4>
+      <p>จากที่ได้กล่าวมาข้างต้นว่าไฟล์ index.php ,SearchComName.php และ SearchComYear.php มีโครงสร้างที่คล้ายกัน แต่สิ่งที่หน้า index.php ไม่มีนั้นคือการค้นหาด้วยชื่อ และช่วงปี</p>
+      <img src="6.png" width="900" height="400">
+      <p>จากโค้ดข้างต้นจะเป็นโค้ดที่ใช้สำหรับหน้าค้นหาข้อมูลภายในตาราง โดยใช้งานร่วมกับ script ที่กล่าวมาข้างต้น โดยสร้างให้อยู่ในรูปแบบ input ที่สามารถใส่ตัวอักษรและตัวเลขลงไปได้ใช้สำหรับช่องค้นหา ส่วนการค้นหาโดยใช้ปีจะเป็นการเลือกปี ภายใน function $scope.select มาเลือกแล้วนำมาเทียบกับปีภายในตารางเพื่อค้นหาโดยใช้ปี</p>
+      <br><br>
+      <h4>insert.php</h4>
+      <p>สำหรับไฟล์นี้จะใช้สำหรับเพิ่มรายชื่อกรรมการพร้อมชุดคำสั่ง โดยเริ่มต้นทำการกำหนด ng-app ,ng-comtroller ส่วน ng-init ให้ทำการเพิ่มเป็นค่าว่างใว้ เขียนได้ตามนี้</p>
+      <img src="7.png" width="900" height="20" >
+      <p>ต่อไปมาทำหน้าตาสำหรับกรอกข้อมูล</p>
+      <img src="8.png" width="900" height="450" >
+      <p>จะได้หน้าตาประมาณนี้ สำหรับกรอกชื่อจะอธิบายภายหลัง โดยแต่ละกล่องใส่ข้อมูลมีรายละเอียดดังนี้ ส่วน label เป็นส่วนหัวข้อไม่สามารถพิมพ์เพิ่มได้ ส่วน input เป็น tag สำหรับใส่ค่าข้อมูล</p>
+      <p>ng-model=”DCode” – ใช้สำหรับเก็บรหัสของชุดคำสั่ง รูปแบบ text</p>
+      <p>ng-model=”DName” – ใช้สำหรับเก็บชื่อของชุดคำสั่ง รูปแบบ text</p>
+      <p>ng-model=”DSDate” – ใช้สำหรับเก็บวันที่เริ่มคำสั่ง รูปแบบ date</p>
+      <p>ng-model=”DEDate” – ใช้สำหรับเก็บวันที่สิ้นสุดของชุดคำสั่ง รูปแบบ date</p>
+      <p>ng-model=”DLink” – ใช้สำหรับเก็บที่อยู่ลิงค์เอกสาร รูปแบบ text</p>
+      <img src="9.png" width="900" height="300">
+      <p>สำหรับส่วนที่สามารถเขียนชื่อกรรมการนั้นจะพิเศษกว่าส่วนอื่นๆก่อนหน้านี้อยู่ สามารถเพิ่มชื่อกรรมการได้มากกว่าหนึ่งคน</p>
+      <p>ng-model=“choice.name” – เป็นการเก็บข้อมูลกรรมการ รูปแบบ text</p>
+      <p>การทำงานตรงส่วนนี้ จะมี tag span สำหรับเพิ่มจำนวนคนหลังช่อง input รายชื่อ สามารถเพิ่มได้กี่คนก็ได้ โดย tag นี้จะอยู่บนช่อง input อันแรกเสมอมาต่อที่การทำปุ่มสำหรับส่งข้อมูล</p>
+      <img src="10.png" width="900" height="100">
+      <p>&amp;nbsp – none-bearking space หมายถึงคำสั่งเว้นวรรคหนึ่งครั้ง มีสองตัวก็สองครั้ง ต่อไปก็ script ที่ใช้ก็มีดังต่อไปนี้</p>
+      <img src="11.png" width="800" height="650">
+      <p>$scope.addNewCommittee = finction() – เป็น function ที่ใช้กับ tag span ตรงเพิ่มชื่อกรรมการ ให้สามารถเพิ่มทีละหลายๆคนได้</p>
+      <p>$scope.insertData = function() – เป็น function สำหรับตรวจสอบค่าของ DEDate และ DSDate สำหรับส่งค่า DStatus ขึ้นไป ทำงานร่วมกับไฟล์ insertDoc.php</p>
+      <p>postData – การส่งค่าขึ้นไปบนฐานข้อมูล</p>
+      <h4>search.php</h4>
+      <p>หน้าตาโค้ดที่ได้จะเป็นแบบนี้</p>
+      <img src="12.png" width="800" height="700">
+      <p>อันดับแรกทำการเชื่อมต่อกับฐานข้อมูล</p>
+      <p>$DSDate – รับค่ามาจาก DSDate</p>
+      <p>$DEDate – รับค่ามาจาก DEDate</p>
+      <p>$sql – เลือกข้อมูล DSDate และ DEDate จากฐานข้อมูลชื่อ DocList</p>
+      <h4>insertDoc.php</h4>
+      <p>เป็นไฟล์ที่ใช้งานร่วมกับไฟล์ insert.php สำหรับเพิ่มข้อมูลลงบนฐานข้อมูล</p>
+      <img src="13.png" width="750" height="300">
+      <p>มี function สำหรับเชื่อมต่อกับฐานข้อมูล</p>
+      <p>$data – เป็นคำสั่งสำหรับ decode ไฟล์ json จาก input โดยจะทำการ decode กับตัวแปรอื่นๆ</p>
+      <img src="14.png" width="800" height="650">
+      <p>$sql ด้านบนจะเป็นการแทรกข้อมูลลงไปในตาราง</p>
+      <p>$sql ด้านล่างจะเป็นการเลือกข้อมูล DCode และ Dname จากฐานข้อมูล DocList</p>
+      <br><br>
+      <h4>document.php</h4>
+      <p>เป็นไฟล์ที่ใช้สำหรับดูข้อมูลของชุดคำสั่ง และสามารถแก้ไขได้เลย เริ่มที่ปุ่มสำหรับการแก้ไขชุดคำสั่ง</p>
+      <img src="15.png" width="900" height="150">
+      <p>จะเห็นว่ามีการเชื่อมไปยังหน้า update.php โดยนำไอดีเดิมที่เก็บอยู่ในขณะนี้ไปด้วย ซึ่งจะทำเป็นปุ่มที่อยู่ใน tag a อีกทีหนึ่ง</p>
+      <p>มาที่ส่วนของการแสดงผลกัน ซึ่งแสดงผลแบบตาราง</p>
+      <img src="16.png" width="900" height="600">
+      <p>ทำการดึงข้อมูลมาจากตำแหน่งปัจจุบันที่กดเลือก โดยจะแสดงออกมาในรูปแบบของตัวอักษรทั้งหมด</p>
+      <br><br>
+      <h4>มาที่ส่วนของ script</h4>
+      <img src="17.png" width="900" height="300">
+      <p>ตัว script นี้ใช้งานร่วมกับ ทนกีสำ showDoc และไฟล์ getDoc.php โดย เป็นการดึง DID ที่ตรงกันออกมา</p>
+      <br><br>
+      <h4>getDock.php</h4>
+      <p>หน้านี้มีหน้าที่เก็บ DID แล้วส่งต่อไปให้กับไฟล์ที่ทำการร้องขอ เริ่มต้นที่สร้างส่วนเชื่อมต่อกับฐานข้อมูลเหมือนเช่นเคย</p>
+      <img src="18.png" width="900" height="200">
+
+      <hr>
+    </div>
+  </div>
+</div>
+
+
+<footer class="container-fluid">  
+  <p><b><center>Creator 58160056 58160625 58160697</center></b></p>
+</footer>
+</body>
+</html>
